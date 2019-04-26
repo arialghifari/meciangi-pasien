@@ -22,17 +22,19 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($pasien as $index => $p)
             <tr>
-                <td>1</td>
-                <td>Andriani Nasution</td>
-                <td>Bima, 21 Desember 1998</td>
-                <td>Jl. Merdeka Barat, Kec. Dompu, Kab. Bima</td>
-                <td>081213182121</td>
-                <td>Oscelaten Start</td>
-                <td>2 Februari 2019</td>
-                <td></td>
-                <td></td>
-            </tr>   
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $p->nama }}</td>
+                    <td>{{ $p->tempat_lahir }}, {{ $p->tanggal_lahir }}</td>
+                    <td>{{ $p->alamat }}</td>
+                    <td>{{ $p->no_hp }}</td>
+                    <td>{{ $p->diagnosa }}</td>
+                    <td>{{ $p->tanggal_masuk_rs }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            @endforeach
         </thead>
 
     </table>        
