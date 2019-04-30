@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container-fluid">
-    <div class="btn btn-primary"><a href="{{ action("HomeController@tambahPasien") }}">Tambah Pasien</a></div>
+    <div class="btn btn-primary"><a href="{{ action("PasienController@tambahPasien") }}">Tambah Pasien</a></div>
 
     <table class="table mt-2">
         <thead>

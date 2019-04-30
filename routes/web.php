@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/pasien', 'HomeController@pasien');
+Route::get('/pasien', 'PasienController@index');
 
-Route::get('/tambah-pasien', 'HomeController@tambahPasien');
+Route::get('/pasien/tambah', 'PasienController@tambahPasien');
+
+Route::post('/pasien/store', 'PasienController@store');
