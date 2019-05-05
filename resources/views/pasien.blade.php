@@ -31,8 +31,11 @@
                     <td>{{ $p->no_hp }}</td>
                     <td>{{ $p->diagnosa }}</td>
                     <td>{{ $p->tanggal_masuk_rs }}</td>
-                    <td><img width="60px" src="assets/pasien/{{ $p->foto }}" alt=""></td>
-                    <td class="d-flex justify-content-around"><a href="#" class="btn btn-sm btn-primary">Edit</a> <a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
+                    <td><img width="60px" src="/assets/pasien/{{ $p->foto }}" alt=""></td>
+                    <td class="d-flex justify-content-around">
+                        <a href="/pasien/edit/{{ $p->id }}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="/pasien/delete/{{ $p->id }}" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
                 </tr>
             @endforeach
         </thead>

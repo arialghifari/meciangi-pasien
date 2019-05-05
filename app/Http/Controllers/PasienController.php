@@ -5,7 +5,7 @@ namespace Laravel\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PasienController extends Controller
+class PasienController extends HomeController
 {
     protected $fillable = [
         'nama', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'no_hp', 'diagnosa', 'tanggal_masuk_rs', 'foto'
@@ -44,6 +44,19 @@ class PasienController extends Controller
             'tanggal_masuk_rs' => $request->tanggal_masuk_rs,
             'foto' => $nama_foto
         ]);
+
+        return redirect('/pasien');
+    }
+
+    public function editPasien($id) 
+    {
+        $pasien = DB::table('pasien')->where('id', $id)->get();
+        return view('edit-pasien', ['pasien' => $pasien]);
+    }
+
+    public function delete($id) 
+    {
+        DB::table('pasien')->where('id', $id)->delete();
 
         return redirect('/pasien');
     }

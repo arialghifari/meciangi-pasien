@@ -26,3 +26,7 @@ Route::get('/pasien', 'PasienController@index');
 Route::get('/pasien/tambah', 'PasienController@tambahPasien');
 
 Route::post('/pasien/store', 'PasienController@store');
+
+Route::get('/pasien/delete/{id}', 'PasienController@delete');
+
+Route::get('/pasien/edit/{id}', 'PasienController@editPasien');
