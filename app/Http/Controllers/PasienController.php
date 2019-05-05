@@ -28,6 +28,12 @@ class PasienController extends Controller
     // insert data
     public function store(Request $request)
     {
+        // catch pasien image
+        $foto_pasien = $request->file('foto_pasien');
+        $nama_foto = rand() . '.' . $foto_pasien->getClientOriginalExtension();
+        // mengupload image ke folder
+        $foto_pasien->move(public_path("assets/pasien"), $nama_foto);
+
         DB::table('pasien')->insert([
             'nama' => $request->nama,
             'tempat_lahir' => $request->tempat_lahir,
@@ -36,7 +42,7 @@ class PasienController extends Controller
             'no_hp' => $request->no_hp,
             'diagnosa' => $request->diagnosa,
             'tanggal_masuk_rs' => $request->tanggal_masuk_rs,
-            'foto' => ''
+            'foto' => $nama_foto
         ]);
 
         return redirect('/pasien');

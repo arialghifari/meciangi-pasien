@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="conainer-fluid">
-    <form action="{{ action('PasienController@store') }}" method="post">
+    <form action="{{ action('PasienController@store') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-2">
                 <label for="foto-pasien">Foto Pasien</label>
-                <input type="file" name="foto-pasien" class="form-control" style="heigt:50px;">
+                <input type="file" name="foto_pasien" class="form-control" style="heigt:50px;">
             </div>
         </div>
         <div class="row justify-content-center mt-3">

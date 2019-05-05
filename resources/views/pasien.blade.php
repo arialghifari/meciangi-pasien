@@ -18,7 +18,7 @@
                 <th>Diagnosa</th>
                 <th>Tgl Masuk RS</th>
                 <th>Foto</th>
-                <th>Aksi</th>
+                <th class="text-center">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +31,8 @@
                     <td>{{ $p->no_hp }}</td>
                     <td>{{ $p->diagnosa }}</td>
                     <td>{{ $p->tanggal_masuk_rs }}</td>
-                    <td></td>
-                    <td></td>
+                    <td><img width="60px" src="assets/pasien/{{ $p->foto }}" alt=""></td>
+                    <td class="d-flex justify-content-around"><a href="#" class="btn btn-sm btn-primary">Edit</a> <a href="#" class="btn btn-sm btn-danger">Hapus</a></td>
                 </tr>
             @endforeach
         </thead>
