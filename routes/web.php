@@ -30,3 +30,5 @@ Route::post('/pasien/store', 'PasienController@store');
 Route::get('/pasien/delete/{id}', 'PasienController@delete');
 
 Route::get('/pasien/edit/{id}', 'PasienController@editPasien');
+
+Route::post('/pasien/update', 'PasienController@updatePasien');

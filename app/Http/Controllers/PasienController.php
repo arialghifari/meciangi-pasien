@@ -54,6 +54,22 @@ class PasienController extends HomeController
         return view('edit-pasien', ['pasien' => $pasien]);
     }
 
+    public function updatePasien(Request $request) 
+    {
+        $new = DB::table('pasien')->where('id', $request->id)
+            ->update([
+                'nama' => $request->nama,
+                'tempat_lahir' => $request->tempat_lahir,
+                'tanggal_lahir' => $request->tanggal_lahir,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'diagnosa' => $request->diagnosa,
+                'tanggal_masuk_rs' => $request->tanggal_masuk_rs
+            ]);
+            
+        return redirect('/pasien');
+    }
+
     public function delete($id) 
     {
         DB::table('pasien')->where('id', $id)->delete();

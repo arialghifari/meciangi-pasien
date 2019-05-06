@@ -5,10 +5,13 @@
 @section('content')
 
 @foreach ($pasien as $p)
-
 <div class="conainer-fluid">
-    <form action="{{ action('PasienController@update') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ action('PasienController@updatePasien') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
+        
+        <img class="rounded mx-auto d-block" width="100px" src="/assets/pasien/{{ $p->foto }}" alt="">
+        
+        <input type="hidden" value="{{ $p->id }}" name="id">
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <label for="nama">Nama</label>
@@ -44,14 +47,14 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="tanggal-masuk-rs">Tanggal Masuk Rs</label>
                 <input type="date" name="tanggal_masuk_rs" class="form-control" value="{{ $p->tanggal_masuk_rs }}">
             </div>
-            <div class="col-md-2">
+            {{-- <div class="col-md-2">
                 <label for="foto-pasien">Foto Pasien</label>
                 <input type="file" name="foto_pasien" class="form-control" style="heigt:50px;">
-            </div>
+            </div> --}}
         </div>
         <div class="row justify-content-center mt-3">
             <div class="col-md-4">
